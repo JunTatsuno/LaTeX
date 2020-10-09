@@ -1,0 +1,78 @@
+\documentclass[a4j,20pt,slide]{ltjsarticle}
+% \usepackage[ipa]{luatexja-preset}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./fig/}}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[pdfencoding=auto]{hyperref}
+\hypersetup{
+  bookmarksnumbered=true,
+  colorlinks=true,
+  pdftitle={Salome-Mecaで超弾性材料を使ってみた！},
+  pdfsubject={第19回オープンCAE勉強会@関東（構造など）},
+  pdfauthor={龍野　潤 （@Jun_Tatsuno）（オープンCAE学会・CAE懇話会）}
+}
+\usepackage{here}
+\usepackage{booktabs}
+\usepackage{menukeys}
+\renewmenumacro{\directory}{pathswithfolder}
+\usepackage[labelformat=empty,labelsep=none]{caption}
+% \usepackage{geometry}
+% \geometry{textwidth=270mm, textheight=195mm}
+%箇条書きの記号変更
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\triangleright$}
+\renewcommand{\labelitemiv}{$\Rightarrow$}
+%ソースコードオプション
+\usepackage{listings}%ソースコード
+\lstset{
+language=Python, %言語
+backgroundcolor={\color[gray]{.97}},%背景色
+basicstyle={\footnotesize\ttfamily},
+commentstyle=\color{blue},
+rulecolor=\color{black},
+keywordstyle={\small\bfseries \color{red}},
+ndkeywordstyle={\small},
+stringstyle={\small\ttfamily \color{red}},
+numberstyle={\scriptsize},
+frame=single, %枠線
+numbers=left, %行番号を振る
+breaklines=true, %長い行を折り返す
+tabsize=2 %タブ幅
+}
+\title{「Salome-Mecaで超弾性材料を使ってみた！」\\第19回オープンCAE勉強会＠関東（構造など）}
+\author{龍野　潤 （@Jun\_Tatsuno）}
+\date{2020年9月12日}
+\pagestyle{plain}
+%
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\tableofcontents
+%
+\include{Introduce}
+\include{elas_hyper}
+\include{testcase}
+\appendix
+\include{command}
+%
+\clearpage
+% 参考文献リスト
+\begin{thebibliography}{9}
+	\bibitem{CAELinux} CAELinux, 『Contrib:KeesWouters/solids/mooney-rivlin』 \href{http://www.caelinux.org/wiki/index.php/Contrib:KeesWouters/solids/mooney-rivlin}{http://www.caelinux.org/wiki/index.php/Contrib:KeesWouters/solids/mooney-rivlin}
+	\bibitem{MATERIAU} EDF, 『[U4.43.01] Operator DEFI\_MATERIAU』\href{https://www.code-aster.org/V2/doc/default/en/man_u/u4/u4.43.01.pdf}{https://www.code-aster.org/V2/doc/default/en/man\_u/u4/u4.43.01.pdf}
+	\bibitem{Nonlinear} EDF, 『[U4.51.11] Non linear constitutive laws』\href{https://www.code-aster.org/V2/doc/default/en/man_u/u4/u4.51.11.pdf}{https://www.code-aster.org/V2/doc/default/en/man\_u/u4/u4.51.11.pdf}
+	\bibitem{law} EDF, 『[R5.03.19] Hyperelastic constitutive law for nearly incompressible material』\href{https://www.code-aster.org/V2/doc/default/en/man_r/r5/r5.03.19.pdf}{https://www.code-aster.org/V2/doc/default/en/man\_r/r5/r5.03.19.pdf}
+	\bibitem{SSNV187} EDF,『[V6.04.187] SSNV187 - Validation of the law on a cube ELAS\_HYPER』\href{https://www.code-aster.org/V2/doc/default/en/man_v/v6/v6.04.187.pdf}{https://www.code-aster.org/V2/doc/default/en/man\_v/v6/v6.04.187.pdf}
+	\bibitem{konwakai}CMD2012,『Salome-Meca活用研究会「非線形分科会｣の活動報告』
+\end{thebibliography}
+All content is licensed under an open-source, 'copyleft' license: \href{https://creativecommons.org/licenses/by/4.0/deed.ja}{表示 4.0 国際 （CC BY 4.0）}
+\begin{figure}[htbp]
+	% 	\caption}
+	% 	\label{}
+	\centering
+	\includegraphics{fig/license.png}
+\end{figure}
+\end{document}
