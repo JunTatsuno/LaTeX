@@ -1,0 +1,85 @@
+\documentclass[a4j,12pt,openany]{ltjsarticle}
+\usepackage[top=25truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
+%
+%% graphicxパッケージ
+\usepackage{graphicx}
+\graphicspath{{./fig/}}
+%%float環境の出力位置をコントロール
+\usepackage{here}
+%%
+%% hyperrefパッケージ
+\usepackage[
+ pdfencoding=auto,
+ bookmarks=true,
+ bookmarksnumbered=true,
+ colorlinks=true,
+ allcolors={blue}
+]{hyperref}
+%%
+%% listingsパッケージ
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Code}
+\lstset{
+basicstyle={\footnotesize\ttfamily},
+commentstyle=\color{blue},
+frame={tb},
+breaklines=true,
+columns=[l]{fullflexible},
+numbers=left,
+numberstyle={\footnotesize},
+keepspaces=true
+}
+%%
+%% 文字色用のパッケージ
+\usepackage{color}
+%% 図・表の接頭語変更
+%\renewcommand{\figurename}{Fig.}
+%\renewcommand{\tablename}{Table.}
+%\renewcommand{\lstlistingname}{Code.}
+%% 箇条書きの記号変更
+\usepackage{amssymb, amsmath}
+\renewcommand{\labelitemi}{$-$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\centerdot$}
+\renewcommand{\labelitemiv}{$\bullet$}
+%% 番号付き箇条書きの表現変更
+\def\labelenumi{\arabic{enumi})}
+%% ページスタイル
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{\leftmark}
+%\rhead{\thepage}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%%
+%% 本文
+\begin{document}
+%%
+%% タイトル出力
+\title{{\Huge PrePoMax v1.1.0\\実例集}\\ {\small 2021年6月26日}}
+\author{Jakub Michalski\\Matej Borovinšek共著\\龍野　潤 訳}
+\date{}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+%% 目次出力
+\setcounter{tocdepth}{2}
+\tableofcontents
+\thispagestyle{empty}
+%%
+\setcounter{page}{0}
+\include{1 Pressure loaded ring segment}
+\include{2 Shaft with surface traction loading}
+\include{3 Elliptical bar torsion}
+\include{4 Rectangular bar subjected to torsion and bending}
+\include{5 Assembly of two cylinders}
+\include{6 Beam modal analysis}
+\include{7 Elasto-plastic plate in tension}
+\include{8 Hertz contact of two spheres}
+\include{9 Cylindrical shell buckling}
+\include{10 Buckling of a simply-supported plate in compression}
+\include{11 Heat transfer in insulated pipeline}
+\include{12 Termomechanical analysis of a bimetallic strip}
+%
+\end{document}
